@@ -121,6 +121,7 @@ class BuildBundleCommand extends BuildSubCommand {
           throwToolExit('Windows is not a supported target platform.');
         }
       case TargetPlatform.linux_x64:
+      case TargetPlatform.linux_arm:
       case TargetPlatform.linux_arm64:
         if (!featureFlags.isLinuxEnabled) {
           throwToolExit('Linux is not a supported target platform.');

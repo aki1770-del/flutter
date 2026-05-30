@@ -552,7 +552,10 @@ class _SearchAnchorState extends State<SearchAnchor> {
     return widget.isFullScreen ??
         switch (Theme.of(context).platform) {
           TargetPlatform.iOS || TargetPlatform.android || TargetPlatform.fuchsia => true,
-          TargetPlatform.macOS || TargetPlatform.linux || TargetPlatform.windows => false,
+          TargetPlatform.macOS ||
+          TargetPlatform.linux ||
+          TargetPlatform.linux_arm64 ||
+          TargetPlatform.windows => false,
         };
   }
 

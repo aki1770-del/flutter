@@ -413,6 +413,7 @@ class _RawAutocompleteState<T extends Object> extends State<RawAutocomplete<T>> 
       TargetPlatform.macOS => _appleShortcuts,
       TargetPlatform.android => _nonAppleShortcuts,
       TargetPlatform.linux => _nonAppleShortcuts,
+      TargetPlatform.linux_arm64 => _nonAppleShortcuts,
       TargetPlatform.windows => _nonAppleShortcuts,
       TargetPlatform.fuchsia => _nonAppleShortcuts,
     },

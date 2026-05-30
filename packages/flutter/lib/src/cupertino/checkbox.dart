@@ -445,6 +445,7 @@ class _CupertinoCheckboxState extends State<CupertinoCheckbox>
           TargetPlatform.fuchsia => const Size.square(kMinInteractiveDimensionCupertino),
           TargetPlatform.macOS ||
           TargetPlatform.linux ||
+          TargetPlatform.linux_arm64 ||
           TargetPlatform.windows => const Size.square(CupertinoCheckbox.width),
         };
 

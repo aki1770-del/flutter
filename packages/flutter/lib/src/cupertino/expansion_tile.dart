@@ -183,6 +183,7 @@ class _CupertinoExpansionTileState extends State<CupertinoExpansionTile> {
             : '${localizations.expandedHint}\n ${localizations.expansionTileCollapsedHint}';
       case TargetPlatform.android:
       case TargetPlatform.fuchsia:
+      case TargetPlatform.linux_arm64:
       case TargetPlatform.linux:
       case TargetPlatform.windows:
         break;

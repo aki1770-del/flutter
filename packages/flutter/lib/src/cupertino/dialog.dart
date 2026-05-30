@@ -1639,6 +1639,7 @@ class _ActionSheetButtonBackgroundState extends State<_ActionSheetButtonBackgrou
       case TargetPlatform.android:
         HapticFeedback.selectionClick();
       case TargetPlatform.fuchsia:
+      case TargetPlatform.linux_arm64:
       case TargetPlatform.linux:
       case TargetPlatform.macOS:
       case TargetPlatform.windows:
@@ -2148,6 +2149,7 @@ class _AlertDialogButtonBackgroundState extends State<_AlertDialogButtonBackgrou
       case TargetPlatform.android:
         HapticFeedback.selectionClick();
       case TargetPlatform.fuchsia:
+      case TargetPlatform.linux_arm64:
       case TargetPlatform.linux:
       case TargetPlatform.macOS:
       case TargetPlatform.windows:

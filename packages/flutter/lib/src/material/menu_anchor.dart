@@ -2244,6 +2244,7 @@ class _LocalizedShortcutLabeler {
       switch (defaultTargetPlatform) {
         case TargetPlatform.android:
         case TargetPlatform.fuchsia:
+        case TargetPlatform.linux_arm64:
         case TargetPlatform.linux:
           return localizations.keyboardKeyMeta;
         case TargetPlatform.windows:
@@ -2259,6 +2260,7 @@ class _LocalizedShortcutLabeler {
       switch (defaultTargetPlatform) {
         case TargetPlatform.android:
         case TargetPlatform.fuchsia:
+        case TargetPlatform.linux_arm64:
         case TargetPlatform.linux:
         case TargetPlatform.windows:
           return localizations.keyboardKeyAlt;
@@ -2278,6 +2280,7 @@ class _LocalizedShortcutLabeler {
       switch (defaultTargetPlatform) {
         case TargetPlatform.android:
         case TargetPlatform.fuchsia:
+        case TargetPlatform.linux_arm64:
         case TargetPlatform.linux:
         case TargetPlatform.windows:
           return localizations.keyboardKeyControl;
@@ -2292,6 +2295,7 @@ class _LocalizedShortcutLabeler {
       switch (defaultTargetPlatform) {
         case TargetPlatform.android:
         case TargetPlatform.fuchsia:
+        case TargetPlatform.linux_arm64:
         case TargetPlatform.linux:
         case TargetPlatform.windows:
           return localizations.keyboardKeyShift;
@@ -3484,6 +3488,7 @@ bool get _isCupertino {
       return true;
     case TargetPlatform.android:
     case TargetPlatform.fuchsia:
+    case TargetPlatform.linux_arm64:
     case TargetPlatform.linux:
     case TargetPlatform.windows:
       return false;

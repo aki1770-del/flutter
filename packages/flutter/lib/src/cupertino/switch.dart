@@ -661,6 +661,7 @@ class _CupertinoSwitchState extends State<CupertinoSwitch>
         HapticFeedback.lightImpact();
       case TargetPlatform.android:
       case TargetPlatform.fuchsia:
+      case TargetPlatform.linux_arm64:
       case TargetPlatform.linux:
       case TargetPlatform.macOS:
       case TargetPlatform.windows:

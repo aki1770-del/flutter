@@ -524,6 +524,7 @@ class LengthLimitingTextInputFormatter extends TextInputFormatter {
           return MaxLengthEnforcement.enforced;
         case TargetPlatform.iOS:
         case TargetPlatform.macOS:
+        case TargetPlatform.linux_arm64:
         case TargetPlatform.linux:
         case TargetPlatform.fuchsia:
           return MaxLengthEnforcement.truncateAfterCompositionEnds;

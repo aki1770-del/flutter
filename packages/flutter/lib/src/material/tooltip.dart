@@ -419,7 +419,10 @@ class TooltipState extends State<Tooltip> with SingleTickerProviderStateMixin {
   // https://material.io/components/tooltips#specs
   double _getDefaultTooltipHeight() {
     return switch (Theme.of(context).platform) {
-      TargetPlatform.macOS || TargetPlatform.linux || TargetPlatform.windows => 24.0,
+      TargetPlatform.macOS ||
+      TargetPlatform.linux ||
+      TargetPlatform.linux_arm64 ||
+      TargetPlatform.windows => 24.0,
       TargetPlatform.android || TargetPlatform.fuchsia || TargetPlatform.iOS => 32.0,
     };
   }
@@ -428,6 +431,7 @@ class TooltipState extends State<Tooltip> with SingleTickerProviderStateMixin {
     return switch (Theme.of(context).platform) {
       TargetPlatform.macOS ||
       TargetPlatform.linux ||
+      TargetPlatform.linux_arm64 ||
       TargetPlatform.windows => const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
       TargetPlatform.android ||
       TargetPlatform.fuchsia ||
@@ -437,7 +441,10 @@ class TooltipState extends State<Tooltip> with SingleTickerProviderStateMixin {
 
   static double _getDefaultFontSize(TargetPlatform platform) {
     return switch (platform) {
-      TargetPlatform.macOS || TargetPlatform.linux || TargetPlatform.windows => 12.0,
+      TargetPlatform.macOS ||
+      TargetPlatform.linux ||
+      TargetPlatform.linux_arm64 ||
+      TargetPlatform.windows => 12.0,
       TargetPlatform.android || TargetPlatform.fuchsia || TargetPlatform.iOS => 14.0,
     };
   }

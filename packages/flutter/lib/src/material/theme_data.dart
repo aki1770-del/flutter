@@ -402,6 +402,7 @@ class ThemeData with Diagnosticable {
       case TargetPlatform.fuchsia:
       case TargetPlatform.iOS:
         materialTapTargetSize ??= MaterialTapTargetSize.padded;
+      case TargetPlatform.linux_arm64:
       case TargetPlatform.linux:
       case TargetPlatform.macOS:
       case TargetPlatform.windows:
@@ -3252,7 +3253,10 @@ class VisualDensity with Diagnosticable {
   static VisualDensity defaultDensityForPlatform(TargetPlatform platform) {
     return switch (platform) {
       TargetPlatform.android || TargetPlatform.iOS || TargetPlatform.fuchsia => standard,
-      TargetPlatform.linux || TargetPlatform.macOS || TargetPlatform.windows => compact,
+      TargetPlatform.linux ||
+      TargetPlatform.linux_arm64 ||
+      TargetPlatform.macOS ||
+      TargetPlatform.windows => compact,
     };
   }
 

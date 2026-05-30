@@ -95,6 +95,7 @@ abstract final class Feedback {
       case TargetPlatform.fuchsia:
         return SystemSound.play(SystemSoundType.click);
       case TargetPlatform.iOS:
+      case TargetPlatform.linux_arm64:
       case TargetPlatform.linux:
       case TargetPlatform.macOS:
       case TargetPlatform.windows:
@@ -144,6 +145,7 @@ abstract final class Feedback {
           SystemSound.play(SystemSoundType.click),
           HapticFeedback.heavyImpact(),
         ]);
+      case TargetPlatform.linux_arm64:
       case TargetPlatform.linux:
       case TargetPlatform.macOS:
       case TargetPlatform.windows:

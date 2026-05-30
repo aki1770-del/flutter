@@ -939,6 +939,7 @@ class TextField extends StatefulWidget {
         );
       case TargetPlatform.android:
       case TargetPlatform.fuchsia:
+      case TargetPlatform.linux_arm64:
       case TargetPlatform.linux:
       case TargetPlatform.windows:
         return SpellCheckSuggestionsToolbar.editableText(editableTextState: editableTextState);
@@ -1419,6 +1420,7 @@ class _TextFieldState extends State<TextField>
     switch (Theme.of(context).platform) {
       case TargetPlatform.iOS:
       case TargetPlatform.macOS:
+      case TargetPlatform.linux_arm64:
       case TargetPlatform.linux:
       case TargetPlatform.windows:
       case TargetPlatform.fuchsia:
@@ -1434,6 +1436,7 @@ class _TextFieldState extends State<TextField>
       case TargetPlatform.android:
         break;
       case TargetPlatform.macOS:
+      case TargetPlatform.linux_arm64:
       case TargetPlatform.linux:
       case TargetPlatform.windows:
         if (cause == SelectionChangedCause.drag) {
@@ -1560,6 +1563,7 @@ class _TextFieldState extends State<TextField>
         );
       case TargetPlatform.android:
       case TargetPlatform.fuchsia:
+      case TargetPlatform.linux_arm64:
       case TargetPlatform.linux:
       case TargetPlatform.windows:
         spellCheckConfiguration = TextField.inferAndroidSpellCheckConfiguration(
@@ -1629,6 +1633,7 @@ class _TextFieldState extends State<TextField>
         selectionColor =
             selectionStyle.selectionColor ?? theme.colorScheme.primary.withOpacity(0.40);
 
+      case TargetPlatform.linux_arm64:
       case TargetPlatform.linux:
         forcePressEnabled = false;
         textSelectionControls ??= desktopTextSelectionHandleControls;

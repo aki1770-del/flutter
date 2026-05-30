@@ -213,6 +213,7 @@ class AdaptiveTextSelectionToolbar extends StatelessWidget {
         return CupertinoTextSelectionToolbarButton.getButtonLabel(context, buttonItem);
       case TargetPlatform.android:
       case TargetPlatform.fuchsia:
+      case TargetPlatform.linux_arm64:
       case TargetPlatform.linux:
       case TargetPlatform.windows:
         assert(debugCheckHasMaterialLocalizations(context));
@@ -275,6 +276,7 @@ class AdaptiveTextSelectionToolbar extends StatelessWidget {
           );
         }
         return buttons;
+      case TargetPlatform.linux_arm64:
       case TargetPlatform.linux:
       case TargetPlatform.windows:
         return buttonItems.map((ContextMenuButtonItem buttonItem) {
@@ -323,6 +325,7 @@ class AdaptiveTextSelectionToolbar extends StatelessWidget {
           children: resultChildren,
         );
       case TargetPlatform.fuchsia:
+      case TargetPlatform.linux_arm64:
       case TargetPlatform.linux:
       case TargetPlatform.windows:
         return DesktopTextSelectionToolbar(anchor: anchors.primaryAnchor, children: resultChildren);

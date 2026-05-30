@@ -480,6 +480,7 @@ class _CheckboxState extends State<Checkbox> with TickerProviderStateMixin, Togg
         switch (theme.platform) {
           case TargetPlatform.android:
           case TargetPlatform.fuchsia:
+          case TargetPlatform.linux_arm64:
           case TargetPlatform.linux:
           case TargetPlatform.windows:
             break;

@@ -95,6 +95,7 @@ class _ActionIcon extends StatelessWidget {
       case TargetPlatform.android:
         semanticsLabel = getAndroidSemanticsLabel(MaterialLocalizations.of(context));
       case TargetPlatform.fuchsia:
+      case TargetPlatform.linux_arm64:
       case TargetPlatform.linux:
       case TargetPlatform.windows:
       case TargetPlatform.iOS:
@@ -137,6 +138,7 @@ class BackButtonIcon extends StatelessWidget {
         switch (Theme.of(context).platform) {
           case TargetPlatform.android:
           case TargetPlatform.fuchsia:
+          case TargetPlatform.linux_arm64:
           case TargetPlatform.linux:
           case TargetPlatform.windows:
             return Icons.arrow_back;

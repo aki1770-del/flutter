@@ -267,6 +267,7 @@ class _CupertinoSliderState extends State<CupertinoSlider> with TickerProviderSt
         }
       case TargetPlatform.android:
       case TargetPlatform.fuchsia:
+      case TargetPlatform.linux_arm64:
       case TargetPlatform.linux:
       case TargetPlatform.macOS:
       case TargetPlatform.windows:

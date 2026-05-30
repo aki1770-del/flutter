@@ -964,6 +964,7 @@ class DefaultTextEditingShortcuts extends StatelessWidget {
       TargetPlatform.fuchsia => _fuchsiaShortcuts,
       TargetPlatform.iOS => _iOSShortcuts,
       TargetPlatform.linux => _linuxShortcuts,
+      TargetPlatform.linux_arm64 => _linuxShortcuts,
       TargetPlatform.macOS => _macShortcuts,
       TargetPlatform.windows => _windowsShortcuts,
     };
@@ -972,6 +973,7 @@ class DefaultTextEditingShortcuts extends StatelessWidget {
   Map<ShortcutActivator, Intent>? _getDisablingShortcut() {
     if (kIsWeb) {
       switch (defaultTargetPlatform) {
+        case TargetPlatform.linux_arm64:
         case TargetPlatform.linux:
           return <ShortcutActivator, Intent>{
             ..._webDisablingTextShortcuts,
@@ -989,6 +991,7 @@ class DefaultTextEditingShortcuts extends StatelessWidget {
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
       case TargetPlatform.fuchsia:
+      case TargetPlatform.linux_arm64:
       case TargetPlatform.linux:
       case TargetPlatform.windows:
         return null;

@@ -2930,6 +2930,7 @@ class _TimePickerState extends State<_TimePicker> with RestorationMixin {
     switch (Theme.of(context).platform) {
       case TargetPlatform.android:
       case TargetPlatform.fuchsia:
+      case TargetPlatform.linux_arm64:
       case TargetPlatform.linux:
       case TargetPlatform.windows:
         _vibrateTimer?.cancel();

@@ -197,6 +197,7 @@ class CupertinoAdaptiveTextSelectionToolbar extends StatelessWidget {
         return buttonItems.map((ContextMenuButtonItem buttonItem) {
           return CupertinoTextSelectionToolbarButton.buttonItem(buttonItem: buttonItem);
         });
+      case TargetPlatform.linux_arm64:
       case TargetPlatform.linux:
       case TargetPlatform.windows:
       case TargetPlatform.macOS:
@@ -225,6 +226,7 @@ class CupertinoAdaptiveTextSelectionToolbar extends StatelessWidget {
           anchorBelow: anchors.secondaryAnchor ?? anchors.primaryAnchor,
           children: resultChildren,
         );
+      case TargetPlatform.linux_arm64:
       case TargetPlatform.linux:
       case TargetPlatform.windows:
       case TargetPlatform.macOS:

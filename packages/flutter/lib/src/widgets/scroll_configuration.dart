@@ -129,6 +129,7 @@ class ScrollBehavior {
       case TargetPlatform.macOS:
       case TargetPlatform.iOS:
         return MultitouchDragStrategy.averageBoundaryPointers;
+      case TargetPlatform.linux_arm64:
       case TargetPlatform.linux:
       case TargetPlatform.windows:
       case TargetPlatform.android:
@@ -161,6 +162,7 @@ class ScrollBehavior {
     // When modifying this function, consider modifying the implementation in
     // the Material and Cupertino subclasses as well.
     switch (getPlatform(context)) {
+      case TargetPlatform.linux_arm64:
       case TargetPlatform.linux:
       case TargetPlatform.macOS:
       case TargetPlatform.windows:
@@ -180,6 +182,7 @@ class ScrollBehavior {
     // the Material and Cupertino subclasses as well.
     switch (getPlatform(context)) {
       case TargetPlatform.iOS:
+      case TargetPlatform.linux_arm64:
       case TargetPlatform.linux:
       case TargetPlatform.macOS:
       case TargetPlatform.windows:
@@ -218,6 +221,7 @@ class ScrollBehavior {
         return (PointerEvent event) => MacOSScrollViewFlingVelocityTracker(event.kind);
       case TargetPlatform.android:
       case TargetPlatform.fuchsia:
+      case TargetPlatform.linux_arm64:
       case TargetPlatform.linux:
       case TargetPlatform.windows:
         return (PointerEvent event) => VelocityTracker.withKind(event.kind);
@@ -250,6 +254,7 @@ class ScrollBehavior {
         return _bouncingDesktopPhysics;
       case TargetPlatform.android:
       case TargetPlatform.fuchsia:
+      case TargetPlatform.linux_arm64:
       case TargetPlatform.linux:
       case TargetPlatform.windows:
         return _clampingPhysics;

@@ -2068,6 +2068,7 @@ class _CalendarDateRangePickerState extends State<_CalendarDateRangePicker> {
       case TargetPlatform.fuchsia:
         HapticFeedback.vibrate();
       case TargetPlatform.iOS:
+      case TargetPlatform.linux_arm64:
       case TargetPlatform.linux:
       case TargetPlatform.macOS:
       case TargetPlatform.windows:

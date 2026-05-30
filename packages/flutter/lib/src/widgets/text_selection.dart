@@ -825,6 +825,7 @@ class TextSelectionOverlay {
         );
       case TargetPlatform.android:
       case TargetPlatform.fuchsia:
+      case TargetPlatform.linux_arm64:
       case TargetPlatform.linux:
       case TargetPlatform.windows:
         if (_selection.isCollapsed) {
@@ -956,6 +957,7 @@ class TextSelectionOverlay {
         );
       case TargetPlatform.android:
       case TargetPlatform.fuchsia:
+      case TargetPlatform.linux_arm64:
       case TargetPlatform.linux:
       case TargetPlatform.windows:
         if (_selection.isCollapsed) {
@@ -1458,6 +1460,7 @@ class SelectionOverlay {
             HapticFeedback.selectionClick();
           case TargetPlatform.fuchsia:
           case TargetPlatform.iOS:
+          case TargetPlatform.linux_arm64:
           case TargetPlatform.linux:
           case TargetPlatform.macOS:
           case TargetPlatform.windows:
@@ -2212,6 +2215,7 @@ class TextSelectionGestureDetectorBuilder {
       case TargetPlatform.iOS:
         editableText.showMagnifier(positionToShow);
       case TargetPlatform.fuchsia:
+      case TargetPlatform.linux_arm64:
       case TargetPlatform.linux:
       case TargetPlatform.macOS:
       case TargetPlatform.windows:
@@ -2229,6 +2233,7 @@ class TextSelectionGestureDetectorBuilder {
       case TargetPlatform.iOS:
         editableText.hideMagnifier();
       case TargetPlatform.fuchsia:
+      case TargetPlatform.linux_arm64:
       case TargetPlatform.linux:
       case TargetPlatform.macOS:
       case TargetPlatform.windows:
@@ -2495,6 +2500,7 @@ class TextSelectionGestureDetectorBuilder {
         // then the selection moves to the closest word edge, instead of a
         // precise position.
         renderEditable.selectPosition(cause: SelectionChangedCause.tap);
+      case TargetPlatform.linux_arm64:
       case TargetPlatform.linux:
       case TargetPlatform.windows:
         editableText.hideToolbar();
@@ -2596,6 +2602,7 @@ class TextSelectionGestureDetectorBuilder {
     final bool isShiftPressedValid =
         _isShiftPressed && renderEditable.selection?.baseOffset != null;
     switch (defaultTargetPlatform) {
+      case TargetPlatform.linux_arm64:
       case TargetPlatform.linux:
       case TargetPlatform.macOS:
       case TargetPlatform.windows:
@@ -2753,6 +2760,7 @@ class TextSelectionGestureDetectorBuilder {
         }
       case TargetPlatform.android:
       case TargetPlatform.fuchsia:
+      case TargetPlatform.linux_arm64:
       case TargetPlatform.linux:
       case TargetPlatform.windows:
         renderEditable.selectWord(cause: SelectionChangedCause.longPress);
@@ -2818,6 +2826,7 @@ class TextSelectionGestureDetectorBuilder {
         }
       case TargetPlatform.android:
       case TargetPlatform.fuchsia:
+      case TargetPlatform.linux_arm64:
       case TargetPlatform.linux:
       case TargetPlatform.windows:
         renderEditable.selectWordsInRange(
@@ -2880,6 +2889,7 @@ class TextSelectionGestureDetectorBuilder {
         }
       case TargetPlatform.android:
       case TargetPlatform.fuchsia:
+      case TargetPlatform.linux_arm64:
       case TargetPlatform.linux:
       case TargetPlatform.windows:
         if (!renderEditable.hasFocus) {
@@ -3038,6 +3048,7 @@ class TextSelectionGestureDetectorBuilder {
         case TargetPlatform.macOS:
         case TargetPlatform.windows:
           _selectParagraphsInRange(from: details.globalPosition, cause: SelectionChangedCause.tap);
+        case TargetPlatform.linux_arm64:
         case TargetPlatform.linux:
           _selectLinesInRange(from: details.globalPosition, cause: SelectionChangedCause.tap);
       }
@@ -3084,6 +3095,7 @@ class TextSelectionGestureDetectorBuilder {
           _expandSelection(details.globalPosition, SelectionChangedCause.drag);
         case TargetPlatform.android:
         case TargetPlatform.fuchsia:
+        case TargetPlatform.linux_arm64:
         case TargetPlatform.linux:
         case TargetPlatform.windows:
           _extendSelection(details.globalPosition, SelectionChangedCause.drag);
@@ -3128,6 +3140,7 @@ class TextSelectionGestureDetectorBuilder {
               }
             case null:
           }
+        case TargetPlatform.linux_arm64:
         case TargetPlatform.linux:
         case TargetPlatform.macOS:
         case TargetPlatform.windows:
@@ -3218,6 +3231,7 @@ class TextSelectionGestureDetectorBuilder {
                 break;
             }
             return;
+          case TargetPlatform.linux_arm64:
           case TargetPlatform.linux:
             return _selectLinesInRange(
               from: dragStartGlobalPosition - editableOffset - scrollableOffset,
@@ -3285,6 +3299,7 @@ class TextSelectionGestureDetectorBuilder {
           }
           return;
         case TargetPlatform.macOS:
+        case TargetPlatform.linux_arm64:
         case TargetPlatform.linux:
         case TargetPlatform.windows:
           return renderEditable.selectPositionAt(
@@ -3553,6 +3568,7 @@ class _TextSelectionGestureDetectorState extends State<TextSelectionGestureDetec
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
       case TargetPlatform.fuchsia:
+      case TargetPlatform.linux_arm64:
       case TargetPlatform.linux:
         // From observation, these platform's reset their tap count to 0 when
         // the number of consecutive taps exceeds 3. For example on Debian Linux
@@ -3711,6 +3727,7 @@ class _TextSelectionGestureDetectorState extends State<TextSelectionGestureDetec
                     ..onCancel = _handleTapCancel;
                 },
               );
+        case TargetPlatform.linux_arm64:
         case TargetPlatform.linux:
         case TargetPlatform.macOS:
         case TargetPlatform.windows:

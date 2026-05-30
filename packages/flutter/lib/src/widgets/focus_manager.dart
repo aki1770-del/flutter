@@ -1669,7 +1669,9 @@ class FocusManager with DiagnosticableTreeMixin, ChangeNotifier {
       kIsWeb ||
       switch (defaultTargetPlatform) {
         TargetPlatform.android || TargetPlatform.iOS => false,
-        TargetPlatform.fuchsia || TargetPlatform.linux => true,
+        TargetPlatform.fuchsia ||
+        TargetPlatform.linux ||
+        TargetPlatform.linux_arm64 => true,
         TargetPlatform.windows || TargetPlatform.macOS => true,
       };
 
@@ -2344,6 +2346,7 @@ class _HighlightModeManager {
           return FocusHighlightMode.traditional;
         }
         return FocusHighlightMode.touch;
+      case TargetPlatform.linux_arm64:
       case TargetPlatform.linux:
       case TargetPlatform.macOS:
       case TargetPlatform.windows:

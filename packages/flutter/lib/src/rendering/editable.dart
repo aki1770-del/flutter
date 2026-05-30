@@ -1842,6 +1842,7 @@ class RenderEditable extends RenderBox
         );
       case TargetPlatform.android:
       case TargetPlatform.fuchsia:
+      case TargetPlatform.linux_arm64:
       case TargetPlatform.linux:
       case TargetPlatform.windows:
         // Override the height to take the full height of the glyph at the TextPosition
@@ -2256,6 +2257,7 @@ class RenderEditable extends RenderBox
           }
         case TargetPlatform.fuchsia:
         case TargetPlatform.macOS:
+        case TargetPlatform.linux_arm64:
         case TargetPlatform.linux:
         case TargetPlatform.windows:
           break;
@@ -2325,6 +2327,7 @@ class RenderEditable extends RenderBox
         _caretPrototype = Rect.fromLTWH(0.0, 0.0, cursorWidth, cursorHeight + 2);
       case TargetPlatform.android:
       case TargetPlatform.fuchsia:
+      case TargetPlatform.linux_arm64:
       case TargetPlatform.linux:
       case TargetPlatform.windows:
         _caretPrototype = Rect.fromLTWH(

@@ -248,6 +248,7 @@ class _CalendarDatePickerState extends State<CalendarDatePicker> {
     switch (Theme.of(context).platform) {
       case TargetPlatform.android:
       case TargetPlatform.fuchsia:
+      case TargetPlatform.linux_arm64:
       case TargetPlatform.linux:
       case TargetPlatform.windows:
         HapticFeedback.vibrate();
@@ -311,6 +312,7 @@ class _CalendarDatePickerState extends State<CalendarDatePicker> {
       _selectedDate = value;
       widget.onDateChanged(_selectedDate!);
       switch (Theme.of(context).platform) {
+        case TargetPlatform.linux_arm64:
         case TargetPlatform.linux:
         case TargetPlatform.macOS:
         case TargetPlatform.windows:

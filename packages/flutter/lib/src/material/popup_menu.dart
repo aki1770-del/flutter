@@ -1195,6 +1195,7 @@ Future<T?> showMenu<T>({
       break;
     case TargetPlatform.android:
     case TargetPlatform.fuchsia:
+    case TargetPlatform.linux_arm64:
     case TargetPlatform.linux:
     case TargetPlatform.windows:
       semanticLabel ??= MaterialLocalizations.of(context).popupMenuLabel;

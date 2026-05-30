@@ -2113,6 +2113,7 @@ class EditableText extends StatefulWidget {
       TargetPlatform.iOS => false,
       TargetPlatform.fuchsia => false,
       TargetPlatform.linux => true,
+      TargetPlatform.linux_arm64 => true,
       TargetPlatform.macOS => true,
       TargetPlatform.windows => true,
     };
@@ -2213,6 +2214,7 @@ class EditableText extends StatefulWidget {
       case TargetPlatform.macOS:
       case TargetPlatform.android:
       case TargetPlatform.fuchsia:
+      case TargetPlatform.linux_arm64:
       case TargetPlatform.linux:
       case TargetPlatform.windows:
         break;
@@ -2281,6 +2283,7 @@ class EditableText extends StatefulWidget {
           }
         case TargetPlatform.android:
         case TargetPlatform.fuchsia:
+        case TargetPlatform.linux_arm64:
         case TargetPlatform.linux:
         case TargetPlatform.windows:
           break;
@@ -2672,6 +2675,7 @@ class EditableTextState extends State<EditableText>
         return textEditingValue.text.isNotEmpty && textEditingValue.selection.isCollapsed;
       case TargetPlatform.android:
       case TargetPlatform.fuchsia:
+      case TargetPlatform.linux_arm64:
       case TargetPlatform.linux:
       case TargetPlatform.windows:
         return textEditingValue.text.isNotEmpty &&
@@ -2711,6 +2715,7 @@ class EditableTextState extends State<EditableText>
             textEditingValue.selection.textInside(textEditingValue.text).trim() != '';
       case TargetPlatform.macOS:
       case TargetPlatform.fuchsia:
+      case TargetPlatform.linux_arm64:
       case TargetPlatform.linux:
       case TargetPlatform.windows:
         return false;
@@ -2761,6 +2766,7 @@ class EditableTextState extends State<EditableText>
       switch (defaultTargetPlatform) {
         case TargetPlatform.iOS:
         case TargetPlatform.macOS:
+        case TargetPlatform.linux_arm64:
         case TargetPlatform.linux:
         case TargetPlatform.windows:
           break;
@@ -2870,6 +2876,7 @@ class EditableTextState extends State<EditableText>
         case TargetPlatform.fuchsia:
           break;
         case TargetPlatform.macOS:
+        case TargetPlatform.linux_arm64:
         case TargetPlatform.linux:
         case TargetPlatform.windows:
           hideToolbar();
@@ -2877,6 +2884,7 @@ class EditableTextState extends State<EditableText>
       switch (defaultTargetPlatform) {
         case TargetPlatform.android:
         case TargetPlatform.fuchsia:
+        case TargetPlatform.linux_arm64:
         case TargetPlatform.linux:
         case TargetPlatform.windows:
           bringIntoView(textEditingValue.selection.extent);
@@ -4107,6 +4115,7 @@ class EditableTextState extends State<EditableText>
     TargetPlatform.android || TargetPlatform.iOS => true,
     TargetPlatform.fuchsia ||
     TargetPlatform.linux ||
+    TargetPlatform.linux_arm64 ||
     TargetPlatform.macOS ||
     TargetPlatform.windows => false,
   };
@@ -4602,6 +4611,7 @@ class EditableTextState extends State<EditableText>
         if (cause == SelectionChangedCause.longPress || cause == SelectionChangedCause.drag) {
           bringIntoView(newSelection.extent);
         }
+      case TargetPlatform.linux_arm64:
       case TargetPlatform.linux:
       case TargetPlatform.windows:
       case TargetPlatform.fuchsia:
@@ -5736,6 +5746,7 @@ class EditableTextState extends State<EditableText>
                       case TargetPlatform.iOS:
                       case TargetPlatform.macOS:
                       case TargetPlatform.fuchsia:
+                      case TargetPlatform.linux_arm64:
                       case TargetPlatform.linux:
                       case TargetPlatform.windows:
                         // Composing text is not counted in history coalescing.
@@ -6761,6 +6772,7 @@ class _EditableTextTapOutsideAction extends ContextAction<EditableTextTapOutside
           case ui.PointerDeviceKind.trackpad:
             throw UnimplementedError('Unexpected pointer down event for trackpad');
         }
+      case TargetPlatform.linux_arm64:
       case TargetPlatform.linux:
       case TargetPlatform.macOS:
       case TargetPlatform.windows:

@@ -627,6 +627,7 @@ class _SelectableTextState extends State<SelectableText>
         return;
       case TargetPlatform.android:
       case TargetPlatform.fuchsia:
+      case TargetPlatform.linux_arm64:
       case TargetPlatform.linux:
       case TargetPlatform.windows:
       // Do nothing.
@@ -731,6 +732,7 @@ class _SelectableTextState extends State<SelectableText>
         selectionColor =
             selectionStyle.selectionColor ?? theme.colorScheme.primary.withOpacity(0.40);
 
+      case TargetPlatform.linux_arm64:
       case TargetPlatform.linux:
       case TargetPlatform.windows:
         forcePressEnabled = false;

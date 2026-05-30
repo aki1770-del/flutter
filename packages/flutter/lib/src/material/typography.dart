@@ -229,6 +229,7 @@ class Typography with Diagnosticable {
       case TargetPlatform.macOS:
         black ??= blackRedwoodCity;
         white ??= whiteRedwoodCity;
+      case TargetPlatform.linux_arm64:
       case TargetPlatform.linux:
         black ??= blackHelsinki;
         white ??= whiteHelsinki;

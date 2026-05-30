@@ -685,6 +685,7 @@ class RefreshIndicatorState extends State<RefreshIndicator>
                             switch (theme.platform) {
                               case TargetPlatform.android:
                               case TargetPlatform.fuchsia:
+                              case TargetPlatform.linux_arm64:
                               case TargetPlatform.linux:
                               case TargetPlatform.windows:
                                 return materialIndicator;

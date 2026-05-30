@@ -75,6 +75,12 @@ enum TargetPlatform {
   /// Linux: <https://www.linux.org>
   linux,
 
+  /// Linux on 64-bit ARM (aarch64): <https://www.linux.org>
+  ///
+  /// Behaves like [linux] for desktop and embedded targets; distinguished to
+  /// allow ARM64-specific build and runtime handling.
+  linux_arm64,
+
   /// macOS: <https://www.apple.com/macos>
   macOS,
 

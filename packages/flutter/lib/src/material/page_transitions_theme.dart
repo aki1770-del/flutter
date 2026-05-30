@@ -928,7 +928,8 @@ class _PageTransitionsThemeTransitionsState<T> extends State<_PageTransitionsThe
           TargetPlatform.fuchsia ||
           TargetPlatform.windows ||
           TargetPlatform.macOS ||
-          TargetPlatform.linux => const ZoomPageTransitionsBuilder(),
+          TargetPlatform.linux ||
+          TargetPlatform.linux_arm64 => const ZoomPageTransitionsBuilder(),
         };
     return matchingBuilder.buildTransitions<T>(
       widget.route,

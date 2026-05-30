@@ -778,6 +778,7 @@ class AlertDialog extends StatelessWidget {
         break;
       case TargetPlatform.android:
       case TargetPlatform.fuchsia:
+      case TargetPlatform.linux_arm64:
       case TargetPlatform.linux:
       case TargetPlatform.windows:
         label ??= MaterialLocalizations.of(context).alertDialogLabel;
@@ -1007,6 +1008,7 @@ class _AdaptiveAlertDialog extends AlertDialog {
     switch (theme.platform) {
       case TargetPlatform.android:
       case TargetPlatform.fuchsia:
+      case TargetPlatform.linux_arm64:
       case TargetPlatform.linux:
       case TargetPlatform.windows:
         break;
@@ -1280,6 +1282,7 @@ class SimpleDialog extends StatelessWidget {
         break;
       case TargetPlatform.android:
       case TargetPlatform.fuchsia:
+      case TargetPlatform.linux_arm64:
       case TargetPlatform.linux:
       case TargetPlatform.windows:
         label ??= MaterialLocalizations.of(context).dialogLabel;
@@ -1553,6 +1556,7 @@ Future<T?> showAdaptiveDialog<T>({
   switch (theme.platform) {
     case TargetPlatform.android:
     case TargetPlatform.fuchsia:
+    case TargetPlatform.linux_arm64:
     case TargetPlatform.linux:
     case TargetPlatform.windows:
       return showDialog<T>(

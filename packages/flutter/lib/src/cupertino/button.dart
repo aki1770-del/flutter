@@ -303,7 +303,10 @@ class CupertinoButton extends StatefulWidget {
       TargetPlatform.iOS ||
       TargetPlatform.android ||
       TargetPlatform.fuchsia => kCupertinoButtonTapMoveSlop,
-      TargetPlatform.macOS || TargetPlatform.linux || TargetPlatform.windows => 0.0,
+      TargetPlatform.macOS ||
+      TargetPlatform.linux ||
+      TargetPlatform.linux_arm64 ||
+      TargetPlatform.windows => 0.0,
     };
   }
 

@@ -3197,6 +3197,7 @@ class ScaffoldState extends State<Scaffold>
       TargetPlatform.android ||
       TargetPlatform.fuchsia ||
       TargetPlatform.linux ||
+      TargetPlatform.linux_arm64 ||
       TargetPlatform.windows => null,
     };
 

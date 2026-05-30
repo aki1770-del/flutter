@@ -873,6 +873,7 @@ class PlatformProvidedMenuItem extends PlatformMenuItem {
       case TargetPlatform.android:
       case TargetPlatform.iOS:
       case TargetPlatform.fuchsia:
+      case TargetPlatform.linux_arm64:
       case TargetPlatform.linux:
       case TargetPlatform.windows:
         return false;

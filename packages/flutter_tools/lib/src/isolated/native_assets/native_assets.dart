@@ -665,6 +665,7 @@ OS getNativeOSFromTargetPlatform(TargetPlatform platform) {
     case TargetPlatform.darwin:
       return OS.macOS;
     case TargetPlatform.linux_x64:
+    case TargetPlatform.linux_arm:
     case TargetPlatform.linux_arm64:
       return OS.linux;
     case TargetPlatform.windows_x64:

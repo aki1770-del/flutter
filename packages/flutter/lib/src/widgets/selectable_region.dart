@@ -311,6 +311,7 @@ class SelectableRegion extends StatefulWidget {
           TargetPlatform.macOS ||
           TargetPlatform.fuchsia ||
           TargetPlatform.linux ||
+          TargetPlatform.linux_arm64 ||
           TargetPlatform.windows => false,
           // TODO(bleroux): the share button should be shown on iOS but the share
           // functionality requires some changes on the engine side because, on iPad,
@@ -477,6 +478,7 @@ class SelectableRegionState extends State<SelectableRegion>
       case TargetPlatform.iOS:
         break;
       case TargetPlatform.fuchsia:
+      case TargetPlatform.linux_arm64:
       case TargetPlatform.linux:
       case TargetPlatform.macOS:
       case TargetPlatform.windows:
@@ -621,6 +623,7 @@ class SelectableRegionState extends State<SelectableRegion>
             : (rawCount % maxConsecutiveTap == 0
                   ? maxConsecutiveTap
                   : rawCount % maxConsecutiveTap);
+      case TargetPlatform.linux_arm64:
       case TargetPlatform.linux:
         // From observation, these platforms reset their tap count to 0 when
         // the number of consecutive taps exceeds the max consecutive tap supported.
@@ -742,6 +745,7 @@ class SelectableRegionState extends State<SelectableRegion>
             // tap.
             break;
           case TargetPlatform.macOS:
+          case TargetPlatform.linux_arm64:
           case TargetPlatform.linux:
           case TargetPlatform.windows:
             hideToolbar();
@@ -776,6 +780,7 @@ class SelectableRegionState extends State<SelectableRegion>
           case TargetPlatform.android:
           case TargetPlatform.fuchsia:
           case TargetPlatform.macOS:
+          case TargetPlatform.linux_arm64:
           case TargetPlatform.linux:
           case TargetPlatform.windows:
             _selectWordAt(offset: details.globalPosition);
@@ -793,6 +798,7 @@ class SelectableRegionState extends State<SelectableRegion>
               _selectionStatusNotifier.value = SelectableRegionSelectionStatus.changing;
             }
           case TargetPlatform.macOS:
+          case TargetPlatform.linux_arm64:
           case TargetPlatform.linux:
           case TargetPlatform.windows:
             _selectParagraphAt(offset: details.globalPosition);
@@ -858,6 +864,7 @@ class SelectableRegionState extends State<SelectableRegion>
               _showHandles();
             }
           case TargetPlatform.macOS:
+          case TargetPlatform.linux_arm64:
           case TargetPlatform.linux:
           case TargetPlatform.windows:
             _selectEndTo(
@@ -883,6 +890,7 @@ class SelectableRegionState extends State<SelectableRegion>
               _selectionStatusNotifier.value = SelectableRegionSelectionStatus.changing;
             }
           case TargetPlatform.macOS:
+          case TargetPlatform.linux_arm64:
           case TargetPlatform.linux:
           case TargetPlatform.windows:
             _selectEndTo(
@@ -916,6 +924,7 @@ class SelectableRegionState extends State<SelectableRegion>
           _showToolbar();
         }
       case TargetPlatform.macOS:
+      case TargetPlatform.linux_arm64:
       case TargetPlatform.linux:
       case TargetPlatform.windows:
         // The selection overlay is not shown on desktop platforms after a drag.
@@ -949,6 +958,7 @@ class SelectableRegionState extends State<SelectableRegion>
             _collapseSelectionAt(offset: details.globalPosition);
             _selectionStatusNotifier.value = SelectableRegionSelectionStatus.changing;
           case TargetPlatform.macOS:
+          case TargetPlatform.linux_arm64:
           case TargetPlatform.linux:
           case TargetPlatform.windows:
           // On desktop platforms the selection is set on tap down.
@@ -975,6 +985,7 @@ class SelectableRegionState extends State<SelectableRegion>
               _showToolbar();
             }
           case TargetPlatform.macOS:
+          case TargetPlatform.linux_arm64:
           case TargetPlatform.linux:
           case TargetPlatform.windows:
             // The selection overlay is not shown on desktop platforms
@@ -1070,6 +1081,7 @@ class SelectableRegionState extends State<SelectableRegion>
           return;
         }
         _selectWordAt(offset: _lastSecondaryTapDownPosition!);
+      case TargetPlatform.linux_arm64:
       case TargetPlatform.linux:
         if (toolbarIsVisible) {
           hideToolbar();
@@ -1709,6 +1721,7 @@ class SelectableRegionState extends State<SelectableRegion>
             _finalizeSelectableRegionStatus();
           case TargetPlatform.iOS:
             hideToolbar(false);
+          case TargetPlatform.linux_arm64:
           case TargetPlatform.linux:
           case TargetPlatform.macOS:
           case TargetPlatform.windows:
@@ -1721,6 +1734,7 @@ class SelectableRegionState extends State<SelectableRegion>
           case TargetPlatform.iOS:
           case TargetPlatform.fuchsia:
             selectAll(SelectionChangedCause.toolbar);
+          case TargetPlatform.linux_arm64:
           case TargetPlatform.linux:
           case TargetPlatform.macOS:
           case TargetPlatform.windows:
@@ -1740,6 +1754,7 @@ class SelectableRegionState extends State<SelectableRegion>
             _finalizeSelectableRegionStatus();
           case TargetPlatform.iOS:
             hideToolbar(false);
+          case TargetPlatform.linux_arm64:
           case TargetPlatform.linux:
           case TargetPlatform.macOS:
           case TargetPlatform.windows:

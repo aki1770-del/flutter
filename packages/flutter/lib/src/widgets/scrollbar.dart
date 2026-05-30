@@ -1681,6 +1681,7 @@ class RawScrollbarState<T extends RawScrollbar> extends State<T> with TickerProv
       // dragging on the scrollbar does not always allow us to enter overscroll.
       switch (ScrollConfiguration.of(context).getPlatform(context)) {
         case TargetPlatform.fuchsia:
+        case TargetPlatform.linux_arm64:
         case TargetPlatform.linux:
         case TargetPlatform.macOS:
         case TargetPlatform.windows:

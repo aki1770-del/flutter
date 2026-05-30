@@ -853,6 +853,7 @@ class MaterialScrollBehavior extends ScrollBehavior {
         return child;
       case Axis.vertical:
         switch (getPlatform(context)) {
+          case TargetPlatform.linux_arm64:
           case TargetPlatform.linux:
           case TargetPlatform.macOS:
           case TargetPlatform.windows:
@@ -875,6 +876,7 @@ class MaterialScrollBehavior extends ScrollBehavior {
         : AndroidOverscrollIndicator.glow;
     switch (getPlatform(context)) {
       case TargetPlatform.iOS:
+      case TargetPlatform.linux_arm64:
       case TargetPlatform.linux:
       case TargetPlatform.macOS:
       case TargetPlatform.windows:

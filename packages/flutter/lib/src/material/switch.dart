@@ -625,6 +625,7 @@ class Switch extends StatelessWidget {
         switch (Theme.of(context).platform) {
           case TargetPlatform.android:
           case TargetPlatform.fuchsia:
+          case TargetPlatform.linux_arm64:
           case TargetPlatform.linux:
           case TargetPlatform.windows:
             effectiveActiveThumbColor = activeColor;
@@ -759,6 +760,7 @@ class _MaterialSwitchState extends State<_MaterialSwitch>
             switch (Theme.of(context).platform) {
               case TargetPlatform.android:
               case TargetPlatform.fuchsia:
+              case TargetPlatform.linux_arm64:
               case TargetPlatform.linux:
               case TargetPlatform.windows:
                 updateCurve();
@@ -833,6 +835,7 @@ class _MaterialSwitchState extends State<_MaterialSwitch>
         switch (Theme.of(context).platform) {
           case TargetPlatform.android:
           case TargetPlatform.fuchsia:
+          case TargetPlatform.linux_arm64:
           case TargetPlatform.linux:
           case TargetPlatform.windows:
             final _SwitchConfig config = Theme.of(context).useMaterial3
@@ -933,6 +936,7 @@ class _MaterialSwitchState extends State<_MaterialSwitch>
         switch (theme.platform) {
           case TargetPlatform.android:
           case TargetPlatform.fuchsia:
+          case TargetPlatform.linux_arm64:
           case TargetPlatform.linux:
           case TargetPlatform.windows:
             switchConfig = theme.useMaterial3 ? _SwitchConfigM3(context) : _SwitchConfigM2();
@@ -1900,6 +1904,7 @@ class _SwitchThemeAdaptation extends Adaptation<SwitchThemeData> {
     switch (theme.platform) {
       case TargetPlatform.android:
       case TargetPlatform.fuchsia:
+      case TargetPlatform.linux_arm64:
       case TargetPlatform.linux:
       case TargetPlatform.windows:
         return defaultValue;
